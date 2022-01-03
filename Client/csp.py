@@ -508,7 +508,7 @@ while i < (k - 2):
     st += str(i) + ': ' + str(i + 1) + '; '
     i += 1
 st += str(i) + ': ' + str(i + 1)
-
+print(st)
 notes = ['a', 'b']
 neighbors = parse_neighbors(st)
 domains = dict.fromkeys(variables, notes)

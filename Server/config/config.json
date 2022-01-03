@@ -1,5 +1,5 @@
 {
-  "init": [1, 1],
-  "melody": ["a", "b", "c", "d"],
-  "max_turns": 200
+    "melody_length": 3,
+    "max_turns": 10,
+    "init": [1, 1]
 }
