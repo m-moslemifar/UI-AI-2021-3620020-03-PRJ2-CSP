@@ -1,8 +1,18 @@
-import copy
-from collections import defaultdict
-from queue import Queue
+#   Script written by group 6 (Mohammad Reza Moslemifar (Student ID: 963613087),
+#                              Ali Abbas Mollaei (Student ID: 963613063),
+#                              Mohammad Ali Ghasemi (Student ID: 963613071))
+#       for the artificial intelligence and expert systems course of University of Isfahan, class 03 of Autumn 2021
+#
+#   CSP solving and pathfinding agent using backtracking and A* search algorithms
+#
+#   The raw code for the classes and utility and pathfinding functions are cloned from the
+#       reference book's algorithm implementations repository
+#
+#   The code was heavily changed and improved upon to suit the given problem for the course
 
-from sortedcontainers import SortedSet
+
+import copy
+from queue import Queue
 
 from base_agent import BaseAgent
 from game_data import GameData
@@ -11,11 +21,7 @@ import functools
 import heapq
 import numpy as np
 import random
-import sys
-from operator import neg
-from collections import defaultdict, Counter
-from operator import neg
-from sortedcontainers import SortedSet
+from collections import defaultdict
 
 
 # ---------------------------------------------Utility functions and classes--------------------------------------------
@@ -259,6 +265,8 @@ class CSP(Problem):
         ancestor = str(int(var) - 2)
         if precedent in self.variables and assignment[precedent] is not None:
             if assignment[precedent] == val:
+                return 1
+            elif abs(ord(val) - ord(assignment[precedent])) > 2:
                 return 1
             elif ancestor in self.variables and assignment[ancestor] is not None:
                 if ord(assignment[precedent]) > ord(assignment[ancestor]):

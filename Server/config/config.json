@@ -1,5 +1,5 @@
 {
-    "melody_length": 3,
-    "max_turns": 10,
+    "melody_length": 4,
+    "max_turns": 15,
     "init": [1, 1]
 }
